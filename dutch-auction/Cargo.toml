@@ -1,0 +1,50 @@
+[package]
+name = "dutch-auction"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[workspace.package]
+version = "0.1.4"
+edition = "2021"
+license = "MIT"
+authors = ["Gear Technologies"]
+
+[dependencies]
+gstd = { workspace = true, features = ["debug"] }
+auction-io.workspace = true
+primitive-types = { workspace = true, features = ["scale-info"] }
+nft-io.workspace = true
+gmeta.workspace = true
+gear-lib.workspace = true
+
+[dev-dependencies]
+gtest.workspace = true
+gclient.workspace = true
+tokio.workspace = true
+
+[build-dependencies]
+gear-wasm-builder.workspace = true
+auction-io.workspace = true
+gmeta.workspace = true
+
+[workspace.dependencies]
+auction-io = { path = "io" }
+nft-io = { git = "https://github.com/gear-dapps/non-fungible-token.git", tag = "0.2.11" }
+gstd = { git = "https://github.com/gear-tech/gear.git", rev = "78dfa07" }
+primitive-types = { version = "0.12", default-features = false, features = ["scale-info"] }
+parity-scale-codec = { version = "3", default-features = false }
+scale-info = { version = "2", default-features = false }
+gear-lib = { git = "https://github.com/gear-dapps/gear-lib.git", tag = "0.3.7" }
+gtest = { git = "https://github.com/gear-tech/gear.git", rev = "78dfa07" }
+gclient = { git = "https://github.com/gear-tech/gear.git", rev = "78dfa07" }
+gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", rev = "78dfa07" }
+gmeta = { git = "https://github.com/gear-tech/gear", rev = "78dfa07" }
+tokio = "1"
+
+[workspace]
+members = ["state"]
+
+[features]
+binary-vendor = []
